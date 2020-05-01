@@ -1,0 +1,590 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.4">
+    
+    
+      
+        <title>Chapter 16 - Microsoft Azure - Managing the Intelligent Cloud 2nd Edition</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.c4007cdc.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.8435c73a.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ffc107">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="amber" data-md-color-accent="amber">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-16-additional-resources" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Microsoft Azure - Managing the Intelligent Cloud 2nd Edition" class="md-header-nav__button md-logo" aria-label="Microsoft Azure - Managing the Intelligent Cloud 2nd Edition">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Microsoft Azure - Managing the Intelligent Cloud 2nd Edition
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Chapter 16
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Microsoft Azure - Managing the Intelligent Cloud 2nd Edition" class="md-nav__button md-logo" aria-label="Microsoft Azure - Managing the Intelligent Cloud 2nd Edition">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Microsoft Azure - Managing the Intelligent Cloud 2nd Edition
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Main" class="md-nav__link">
+      Main
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Chapters
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Chapters" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Chapters
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Chapter 16
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Chapter 16" class="md-nav__link md-nav__link--active">
+      Chapter 16
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-machine-learning-and-deep-learning" class="md-nav__link">
+    Introduction to Machine Learning and Deep Learning
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Machine Learning and Deep Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classical-machine-learning" class="md-nav__link">
+    Classical machine learning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-learning" class="md-nav__link">
+    Deep learning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-numpy-library" class="md-nav__link">
+    Python NumPy library
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensors" class="md-nav__link">
+    Tensors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-data-science-virtual-machine" class="md-nav__link">
+    The Data Science Virtual Machine
+  </a>
+  
+    <nav class="md-nav" aria-label="The Data Science Virtual Machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-and-jupyterhub" class="md-nav__link">
+    Jupyter and JupyterHub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-machine-learning" class="md-nav__link">
+    Azure Machine Learning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iot-devices-and-the-intelligent-edge" class="md-nav__link">
+    IoT Devices and the Intelligent Edge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#databricks" class="md-nav__link">
+    Databricks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasets" class="md-nav__link">
+    Datasets
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-machine-learning-and-deep-learning" class="md-nav__link">
+    Introduction to Machine Learning and Deep Learning
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Machine Learning and Deep Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classical-machine-learning" class="md-nav__link">
+    Classical machine learning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-learning" class="md-nav__link">
+    Deep learning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-numpy-library" class="md-nav__link">
+    Python NumPy library
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensors" class="md-nav__link">
+    Tensors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-data-science-virtual-machine" class="md-nav__link">
+    The Data Science Virtual Machine
+  </a>
+  
+    <nav class="md-nav" aria-label="The Data Science Virtual Machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-and-jupyterhub" class="md-nav__link">
+    Jupyter and JupyterHub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#azure-machine-learning" class="md-nav__link">
+    Azure Machine Learning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iot-devices-and-the-intelligent-edge" class="md-nav__link">
+    IoT Devices and the Intelligent Edge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#databricks" class="md-nav__link">
+    Databricks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasets" class="md-nav__link">
+    Datasets
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="chapter-16-additional-resources">Chapter 16 Additional Resources</h1>
+<h2 id="introduction-to-machine-learning-and-deep-learning">Introduction to Machine Learning and Deep Learning</h2>
+<h3 id="classical-machine-learning">Classical machine learning</h3>
+<ul>
+<li><a href="https://scikit-image.org/docs/dev/auto_examples/features_detection/plot_hog.html" target="_blank">Histogram of Oriented Gradients (HOG)</a></li>
+<li><a href="https://jakevdp.github.io/PythonDataScienceHandbook/05.07-support-vector-machines.html" target="_blank"><a>In-Depth: Support Vector Machines</a></li>
+<li><a href="https://github.com/rasbt/python-machine-learning-book-2nd-edition/blob/master/code/ch03/ch03.ipynb" target="_blank"><a>A Tour of Machine Learning Classifiers Using Scikit-Learn in Jupyter</a></li>
+</ul>
+<h3 id="deep-learning">Deep learning</h3>
+<ul>
+<li>
+<p><a href="http://sebastianraschka.com/Articles/2015_singlelayer_neurons.html" target="_blank">Single layer neural networks and gradient decent intro</a></p>
+</li>
+<li>
+<p><a href="https://github.com/rasbt/python-machine-learning-book-2nd-edition" target="_blank">"Python Machine Learning 2nd Edition" by Sebastian Raschka</a></p>
+</li>
+<li>
+<p><a href="https://www.manning.com/books/deep-learning-with-python" target="_blank">"Deep Learning with Python" by François Chollet</a></p>
+</li>
+</ul>
+<h3 id="python-numpy-library">Python NumPy library</h3>
+<ul>
+<li><a href="http://cs231n.github.io//python-numpy-tutorial/" target="_blank">NumPy tutorial</a></li>
+<li><a href="https://rheartpython.github.io/navigating-ml/numpy_intro/" target="_blank">Collection of resources for NumPy and SciPy</a></li>
+</ul>
+<h3 id="tensors">Tensors</h3>
+<ul>
+<li><a href="https://github.com/PythonWorkshop/intro-to-nlp-with-pytorch/blob/master/Introduction/3.Introduction_to_Tensors.ipynb" target="_blank">Introduction to PyTorch tensors in Jupyter</a></li>
+</ul>
+<h2 id="the-data-science-virtual-machine">The Data Science Virtual Machine</h2>
+<h3 id="jupyter-and-jupyterhub">Jupyter and JupyterHub</h3>
+<ul>
+<li><a href="https://jakevdp.github.io/PythonDataScienceHandbook/01.00-ipython-beyond-normal-python.html" target="_blank"><a>IPython: Beyond Normal Python</a></li>
+<li><a href="https://www.youtube.com/watch?v=4b1G9pQC3KM" target="_blank"><a>JupyterHub on the Linux Data Science Virtual Machine (Video)</a></li>
+</ul>
+<h2 id="azure-machine-learning">Azure Machine Learning</h2>
+<ul>
+<li><a href="https://github.com/Azure/MachineLearningNotebooks" target="_blank"><a>Azure Machine Learning service example notebooks</a></li>
+<li><a href="https://www.youtube.com/watch?v=uQjcicTLpUM" target="_blank"><a>The Azure Machine Learning Service: Part 1 Introduction (Video)</a></li>
+<li><a href="https://www.youtube.com/watch?v=bu0rVjP-ZZM" target="_blank"><a>Azure Machine Learning service: Part 2 Training a Model
+ (Video)</a></li>
+</ul>
+<h2 id="iot-devices-and-the-intelligent-edge">IoT Devices and the Intelligent Edge</h2>
+<ul>
+<li><a href="https://github.com/Azure-Samples/mxchip-iot-devkit-get-started" target="_blank"><a>Getting started with the MXChip IoT DevKit</a></li>
+<li><a href="https://github.com/Azure-Samples/NVIDIA-Deepstream-Azure-IoT-Edge-on-a-NVIDIA-Jetson-Nano" target="_blank"><a>NVIDIA Deepstream + Azure IoT Edge on a NVIDIA Jetson Nano</a></li>
+</ul>
+<h2 id="databricks">Databricks</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ofYIsToVnT0" target="_blank">Azure Databricks = Azure + Spark + Machine Learning (Video)</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-configure-environment#azure-databricks" target="_blank"><a>Azure ML with Auto ML install on Databricks</a></li>
+</ul>
+<h2 id="datasets">Datasets</h2>
+<ul>
+<li><a href="https://homepages.inf.ed.ac.uk/rbf/CAVIARDATA1/" target="_blank">CAVIAR</a></li>
+<li><a href="http://yann.lecun.com/exdb/mnist/" target="_blank">MNIST</a></li>
+<li><a href="https://github.com/Ferlix/Cat-faces-dataset" target="_blank">Cat faces</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." title="Main" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Main
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.83fe6e3c.min.js"></script>
+      <script src="../assets/javascripts/bundle.7e1cb91c.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.37585f48.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
