@@ -1,0 +1,15 @@
+site_name: Microsoft Azure - Managing the Intelligent Cloud 2nd Edition
+
+nav:
+  - Main: index.md
+  - Chapters:
+    - Chapter 16: ch16.md
+
+markdown_extensions:
+  - codehilite
+
+theme:
+  name: material
+  palette:
+    primary: amber
+    accent: amber
